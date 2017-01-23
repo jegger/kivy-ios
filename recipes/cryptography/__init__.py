@@ -39,8 +39,7 @@ class CryptographyRecipe(PythonRecipe):
         dest_dir = join(self.ctx.dist_dir, "root", "python")
         pythonpath = join(dest_dir, 'lib', 'python2.7', 'site-packages')
         build_env['PYTHONPATH'] = pythonpath
-        args = [hostpython, "setup.py", "install", "--prefix", dest_dir,
-        "--old-and-unmanageable"]
+        args = [hostpython, "setup.py", "install", "--prefix", dest_dir]
         shprint(*args, _env=build_env)
         #args = [hostpython, "setup.py", "install"]
         #shprint(*args, _env=build_env)
